@@ -6,18 +6,15 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <!-- 清楚默认样式 -->
-    <link rel="stylesheet" href="./css/normalize.css">
-    <!-- 引入主页样式 -->
-    <link rel="stylesheet" href="./css/to_index.css">
-
+    <link rel="stylesheet" href="../css/to_index.css">
+    <link rel="stylesheet" href="../css/to_playNew.css">
 </head>
 
 <body>
     <!-- 导航栏部分 -->
     <div class="nav">
         <div class="connet">
-            <img src="./img/logonew.png" alt="">
+            <img src="../img/logonew.png" alt="">
             <ul class="nav_con">
                 <li><a href="#">首页</a></li>
                 <li><a href="#">酷玩</a></li>
@@ -27,41 +24,45 @@
             </ul>
             <div class="right_con">
                 <div>
-                    <img src="./img/search.png" alt="">
+                    <img src="../img/search.png" alt="">
                     <button class="btn">注册</button>
                     <button class="btn">登录</button>
                 </div>
             </div>
         </div>
     </div>
-    <!-- banner 部分 -->
-    <div class="banner">
-        <div class="img_box">
-            <img src="./img/original.jpg" alt="">
+
+
+    <!-- content -->
+    <div class="content_box">
+        <div class="title">
+            <h1>发现酷玩</h1>
         </div>
-        <div class="right_text">
-            <div>
-                <h1><a href="#">幻想小贝HIFI2.1音响</a></h1>
-            </div>
-            <div class="btn_white">
-                <div class="small_box"><a href="#">126人申请</a></div>
-                <div class="small_box"><a href="#">￥599</a></div>
-                <div class="small_box"><a href="#">20台</a></div>
-            </div>
-            <div>申请时间剩余：<span class="times"></span></div>
-            <div class="re_now"><a href="#">立即申请</a></div>
+        <div class="fu_title">
+            <div><a href="#">最新</a></div>
+            <div><a href="#">最热</a></div>
+            <div><a href="#">品牌</a></div>
+        </div>
+        <!-- 这里展示请求的内容 -->
+        <div class="text_ajax_content_box">
+            <div class=" ajax_the_new ajax_box"></div>
+            <div class="ajax_the_hot ajax_box"></div>
         </div>
     </div>
+
+
+
+
 
     <!-- footer部分 -->
     <div class="footer">
         <div class="footer_con">
             <div class="left_box">
-                <img src="./img/code.png" alt="">
+                <img src="../img/code.png" alt="">
             </div>
             <div class="right_box">
                 <dl>
-                    <img src="./img/logoImg.jpg" alt="">
+                    <img src="../img/logoImg.jpg" alt="">
                     <p>全球酷玩试用导购平台<br>库新奇好玩品质</p>
                     <p>微信添加“JguoJguo”<br>获取我们的服务</p>
                 </dl>
@@ -101,7 +102,58 @@
         </div>
         <p class="bottom">©2016极果版权所有</p>
     </div>
-    <script src="./js/to_index.js"></script>
+    <script src="../js/jquery.min.js"></script>
+    <script src="../js/myAjax.js"></script>
+    <!-- <script src="../js/to_playNew.js"></script> -->
+
+    <script id="playNew" type="text/html">
+        {{each value}}
+        <div class="arry_eight_box">
+            {{each $value}}
+            <div class="inner_box_small">
+                <div class="playNew_top_box"><img src="{{$value.img}}" alt=""></div>
+                <div class="playNew_bottom_box">
+                    <h4>{{$value.text}}</h4>
+                    <div class="des">{{$value.description}}</div>
+                    <div class="under_box">
+                        <div class="price">{{$value.price}}</div>
+                        <div class="like_letter">
+                            <span><span><img src="../img/xin.png" alt=""></span>&nbsp;{{$value.like}}</span>
+                            <span><span><img src="../img/reply.png" alt=""></span>&nbsp;{{$value.words}}</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            {{/each}}
+        </div>
+        {{/each}}
+    </script>
+    <!-- 引入模板 -->
+    <script src="../js/template-web.js"></script>
+    <script>
+        // 进行ajax请求拿取数据
+        request("get", "/play/new", "", success, error);
+
+        function success(res) {
+            console.log(res);
+            rederHtml(res);
+        }
+        // 输出错误信息
+        function error(res) {
+            console.log(res);
+        }
+
+        // 将数据和模板关联起来
+        var ajax_the_new = document.getElementsByClassName('ajax_the_new')[0];
+
+        function rederHtml(res) {
+            var html_res = template('playNew', {
+                value: res
+            })
+            ajax_the_new.innerHTML = html_res;
+        }
+    </script>
+
 </body>
 
 </html>

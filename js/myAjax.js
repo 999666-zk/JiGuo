@@ -10,7 +10,7 @@ errorfn 失败回调
 */
 
 //封装ajax
-function request(type, url, data, successfn, errorfn) {
+function request(type, path, data, successfn, errorfn) {
   // 默认选择post 请求
   type =
     type == null || type == "" || typeof type == "undefined" ? "get" : type;
@@ -18,7 +18,7 @@ function request(type, url, data, successfn, errorfn) {
   data = data == null || data == "" || typeof data == "undefined" ? {} : data;
   $.ajax({
     type: type,
-    url: url,
+    url: "http://localhost:3000" + path,
     dataType: "json",
     data: data,
     success: function (res) {
