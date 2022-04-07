@@ -47,6 +47,10 @@
         <div class="text_ajax_content_box">
             <div class=" ajax_the_new ajax_box"></div>
             <div class="ajax_the_hot ajax_box"></div>
+            <div class="ajax_the_pinpai ajax_box"></div>
+            <div class="more_down">
+                <span><img src="../img/more.png" alt="">加载更多</span>
+            </div>
         </div>
     </div>
 
@@ -104,7 +108,7 @@
     </div>
     <script src="../js/jquery.min.js"></script>
     <script src="../js/myAjax.js"></script>
-    <!-- <script src="../js/to_playNew.js"></script> -->
+    <script src="../js/to_playNew.js"></script>
 
     <script id="playNew" type="text/html">
         {{each value}}
@@ -128,29 +132,91 @@
         </div>
         {{/each}}
     </script>
+
+
+
+    <script id="Pinpai" type="text/html">
+        {{each value}}
+        <div class="pin_out_box">
+            <h3><span></span>
+                <p>{{$value.title}}</p>
+            </h3>
+            {{each $value.list.slice(0,11)}}
+            <div class="pin_show">
+
+                <div>
+                    <img src="../img/cat_{{$index+1}}.png" alt=""><br>
+                    <a href="#">{{$value.productName}}</a><span>({{$value.nums}})</span>
+                </div>
+            </div>
+            {{/each}}
+            <div class="pin_under">
+                {{each $value.list}}
+                <div class="pin_bottom">
+                    <a href="#">{{$value.productName}}</a><span>({{$value.nums}})</span></div>
+                {{/each}}
+            </div>
+        </div>
+        {{/each}}
+    </script>
     <!-- 引入模板 -->
     <script src="../js/template-web.js"></script>
     <script>
         // 进行ajax请求拿取数据
         request("get", "/play/new", "", success, error);
+        request('get', "/play/hot", "", successhot, errorhot);
+        request('get', '/play/category', '', successpin, errorpin);
+        // 将数据和模板关联起来
+        // ---------------------------new------------------------------
+        var ajax_the_new = document.getElementsByClassName('ajax_the_new')[0];
 
         function success(res) {
-            console.log(res);
-            rederHtml(res);
+            console.log(res.slice(0, 2));
+            rederHtml(res.slice(0, 2), ajax_the_new);
         }
         // 输出错误信息
         function error(res) {
             console.log(res);
         }
+        // -----------------------hot---------------------------
+        var ajax_the_hot = document.getElementsByClassName('ajax_the_hot')[0];
 
-        // 将数据和模板关联起来
-        var ajax_the_new = document.getElementsByClassName('ajax_the_new')[0];
+        function successhot(res) {
+            rederHtml(res.slice(2, 4), ajax_the_hot);
+        }
+        // 输出错误信息
+        function errorhot(res) {
+            console.log(res);
+        }
+        // --------------------------pinpai--------------------------
+        var ajax_the_pinpai = document.getElementsByClassName('ajax_the_pinpai')[0];
 
-        function rederHtml(res) {
+        function successpin(res) {
+            console.log(res);
+            rederHtml_model2(res, ajax_the_pinpai);
+        }
+        // 输出错误信息
+        function errorpin(res) {
+            console.log(res);
+        }
+
+
+
+
+
+
+        function rederHtml(res, dom) {
             var html_res = template('playNew', {
                 value: res
             })
-            ajax_the_new.innerHTML = html_res;
+            dom.innerHTML = html_res;
+        }
+
+        function rederHtml_model2(res, dom) {
+            var html_res = template('Pinpai', {
+                value: res
+            })
+            dom.innerHTML = html_res;
         }
     </script>
 

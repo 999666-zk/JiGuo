@@ -45,19 +45,18 @@
   margin: auto;
 }
 
-.content_box .text_ajax_content_box .ajax_the_new {
-  background-color: green;
-}
-
-.content_box .text_ajax_content_box .ajax_the_new .arry_eight_box {
+.content_box .text_ajax_content_box .ajax_the_new .arry_eight_box,
+.content_box .text_ajax_content_box .ajax_the_hot .arry_eight_box {
   width: 1420px;
   height: -webkit-max-content;
   height: -moz-max-content;
   height: max-content;
   overflow: hidden;
+  padding-top: 20px;
 }
 
-.content_box .text_ajax_content_box .ajax_the_new .arry_eight_box .inner_box_small {
+.content_box .text_ajax_content_box .ajax_the_new .arry_eight_box .inner_box_small,
+.content_box .text_ajax_content_box .ajax_the_hot .arry_eight_box .inner_box_small {
   width: 280px;
   margin: 20px 37px;
   float: left;
@@ -66,15 +65,18 @@
   overflow: hidden;
 }
 
-.content_box .text_ajax_content_box .ajax_the_new .arry_eight_box .inner_box_small .playNew_top_box {
+.content_box .text_ajax_content_box .ajax_the_new .arry_eight_box .inner_box_small .playNew_top_box,
+.content_box .text_ajax_content_box .ajax_the_hot .arry_eight_box .inner_box_small .playNew_top_box {
   width: 280px;
 }
 
-.content_box .text_ajax_content_box .ajax_the_new .arry_eight_box .inner_box_small .playNew_top_box img {
+.content_box .text_ajax_content_box .ajax_the_new .arry_eight_box .inner_box_small .playNew_top_box img,
+.content_box .text_ajax_content_box .ajax_the_hot .arry_eight_box .inner_box_small .playNew_top_box img {
   width: 280px;
 }
 
-.content_box .text_ajax_content_box .ajax_the_new .arry_eight_box .inner_box_small .playNew_bottom_box {
+.content_box .text_ajax_content_box .ajax_the_new .arry_eight_box .inner_box_small .playNew_bottom_box,
+.content_box .text_ajax_content_box .ajax_the_hot .arry_eight_box .inner_box_small .playNew_bottom_box {
   padding: 25px 14px;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -85,16 +87,19 @@
           flex-direction: column;
 }
 
-.content_box .text_ajax_content_box .ajax_the_new .arry_eight_box .inner_box_small .playNew_bottom_box .h4 {
+.content_box .text_ajax_content_box .ajax_the_new .arry_eight_box .inner_box_small .playNew_bottom_box .h4,
+.content_box .text_ajax_content_box .ajax_the_hot .arry_eight_box .inner_box_small .playNew_bottom_box .h4 {
   width: 280px;
   margin: 20px 0px;
 }
 
-.content_box .text_ajax_content_box .ajax_the_new .arry_eight_box .inner_box_small .playNew_bottom_box .des {
+.content_box .text_ajax_content_box .ajax_the_new .arry_eight_box .inner_box_small .playNew_bottom_box .des,
+.content_box .text_ajax_content_box .ajax_the_hot .arry_eight_box .inner_box_small .playNew_bottom_box .des {
   margin-top: 6px;
 }
 
-.content_box .text_ajax_content_box .ajax_the_new .arry_eight_box .inner_box_small .playNew_bottom_box .under_box {
+.content_box .text_ajax_content_box .ajax_the_new .arry_eight_box .inner_box_small .playNew_bottom_box .under_box,
+.content_box .text_ajax_content_box .ajax_the_hot .arry_eight_box .inner_box_small .playNew_bottom_box .under_box {
   margin-top: 20px;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -104,19 +109,112 @@
           justify-content: space-between;
 }
 
-.content_box .text_ajax_content_box .ajax_the_new .arry_eight_box .inner_box_small .playNew_bottom_box .under_box .price {
+.content_box .text_ajax_content_box .ajax_the_new .arry_eight_box .inner_box_small .playNew_bottom_box .under_box .price,
+.content_box .text_ajax_content_box .ajax_the_hot .arry_eight_box .inner_box_small .playNew_bottom_box .under_box .price {
   color: #ff5333;
 }
 
-.content_box .text_ajax_content_box .ajax_the_new .arry_eight_box .inner_box_small .playNew_bottom_box .under_box .like_letter {
+.content_box .text_ajax_content_box .ajax_the_new .arry_eight_box .inner_box_small .playNew_bottom_box .under_box .like_letter,
+.content_box .text_ajax_content_box .ajax_the_hot .arry_eight_box .inner_box_small .playNew_bottom_box .under_box .like_letter {
   color: #bcbcbc;
 }
 
-.content_box .text_ajax_content_box .ajax_the_new .arry_eight_box .inner_box_small .playNew_bottom_box .under_box .like_letter span {
+.content_box .text_ajax_content_box .ajax_the_new .arry_eight_box .inner_box_small .playNew_bottom_box .under_box .like_letter span,
+.content_box .text_ajax_content_box .ajax_the_hot .arry_eight_box .inner_box_small .playNew_bottom_box .under_box .like_letter span {
   margin: 0 4px;
 }
 
-.content_box .text_ajax_content_box .ajax_the_hot {
-  background-color: red;
-  display: none;
+.content_box .text_ajax_content_box .more_down {
+  width: 100%;
+  padding: 40px 0;
+}
+
+.content_box .text_ajax_content_box .more_down span {
+  display: block;
+  width: -webkit-max-content;
+  width: -moz-max-content;
+  width: max-content;
+  margin: 10px auto;
+  color: #ff5333;
+}
+
+.content_box .text_ajax_content_box .more_down img {
+  margin-right: 8px;
+}
+
+.pin_out_box {
+  width: 1420px;
+  height: -webkit-max-content;
+  height: -moz-max-content;
+  height: max-content;
+  margin: 40px;
+  background-color: white;
+  border: 2px solid #eeeeee;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.pin_out_box h3 {
+  line-height: 60px;
+}
+
+.pin_out_box h3 span {
+  display: block;
+  margin-top: 20px;
+  width: 10px;
+  height: 30px;
+  background-color: #ff5333;
+  float: left;
+}
+
+.pin_out_box h3 p {
+  margin-left: 50px;
+  padding-top: 5px;
+}
+
+.pin_out_box .pin_show {
+  width: 100%;
+  height: -webkit-max-content;
+  height: -moz-max-content;
+  height: max-content;
+}
+
+.pin_out_box .pin_show div {
+  width: 180px;
+  height: 180px;
+  margin: 10px 20px;
+  float: left;
+  text-align: center;
+}
+
+.pin_out_box .pin_show div img {
+  display: block;
+  margin: auto;
+  margin-top: 20px;
+}
+
+.pin_out_box .pin_show div a,
+.pin_out_box .pin_show div span {
+  color: #b1b1b1;
+}
+
+.pin_out_box .pin_under {
+  float: left;
+  width: 1940px;
+  border-top: 2px dashed #eeeeee;
+  padding-top: 20px;
+  margin-bottom: 20px;
+}
+
+.pin_out_box .pin_under .pin_bottom {
+  width: 200px;
+  height: 40px;
+  line-height: 40px;
+  text-align: center;
+  float: left;
+}
+
+.pin_out_box .pin_under .pin_bottom a,
+.pin_out_box .pin_under .pin_bottom span {
+  color: #b1b1b1;
 }
