@@ -127,6 +127,7 @@
 .content_box .text_ajax_content_box .more_down {
   width: 100%;
   padding: 40px 0;
+  cursor: pointer;
 }
 
 .content_box .text_ajax_content_box .more_down span {

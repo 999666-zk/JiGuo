@@ -49,7 +49,9 @@
             <div class="ajax_the_hot ajax_box"></div>
             <div class="ajax_the_pinpai ajax_box"></div>
             <div class="more_down">
-                <span><img src="../img/more.png" alt="">加载更多</span>
+                <span id="more_selection"><img src="../img/more.png" alt="" style="float: left;margin-top: 8px;">
+                    <span style="width: 140px;">加载更多</span>
+                </span>
             </div>
         </div>
     </div>
@@ -172,6 +174,7 @@
 
         function success(res) {
             console.log(res.slice(0, 2));
+            console.log(res.length);
             rederHtml(res.slice(0, 2), ajax_the_new);
         }
         // 输出错误信息
@@ -182,7 +185,7 @@
         var ajax_the_hot = document.getElementsByClassName('ajax_the_hot')[0];
 
         function successhot(res) {
-            rederHtml(res.slice(2, 4), ajax_the_hot);
+            rederHtml(res.slice(2, 3), ajax_the_hot);
         }
         // 输出错误信息
         function errorhot(res) {
@@ -193,7 +196,7 @@
 
         function successpin(res) {
             console.log(res);
-            rederHtml_model2(res, ajax_the_pinpai);
+            rederHtml_model2(res.slice(0, 2), ajax_the_pinpai);
         }
         // 输出错误信息
         function errorpin(res) {
