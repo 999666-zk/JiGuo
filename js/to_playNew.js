@@ -15,14 +15,17 @@ $(function () {
 
       // 判断
       if ($(this).children("a").text() == "最新") {
-        $(".ajax_the_new").css("display", "block");
-        $(".ajax_the_new").siblings(".ajax_box").css("display", "none");
+        $(".ajax_the_new").fadeIn("slow");
+        $(".ajax_the_new").siblings(".ajax_box").fadeOut("slow");
+        request("get", "/play/new", "", success, error);
       } else if ($(this).children("a").text() == "最热") {
-        $(".ajax_the_hot").css("display", "block");
-        $(".ajax_the_hot").siblings(".ajax_box").css("display", "none");
+        $(".ajax_the_hot").fadeIn("slow");
+        $(".ajax_the_hot").siblings(".ajax_box").fadeOut("slow");
+        request("get", "/play/hot", "", successhot, errorhot);
       } else if ($(this).children("a").text() == "品牌") {
-        $(".ajax_the_pinpai").css("display", "block");
-        $(".ajax_the_pinpai").siblings(".ajax_box").css("display", "none");
+        $(".ajax_the_pinpai").fadeIn("slow");
+        $(".ajax_the_pinpai").siblings(".ajax_box").fadeOut("slow");
+        request("get", "/play/category", "", successpin, errorpin);
       }
       $(this).siblings().children("a").css({
         color: "rgb(180, 175, 170)",
