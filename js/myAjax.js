@@ -18,7 +18,7 @@ function request(type, path, data, successfn, errorfn) {
   data = data == null || data == "" || typeof data == "undefined" ? {} : data;
   $.ajax({
     type: type,
-    url: "http://localhost:3000" + path,
+    url: "http://192.168.1.13:3000" + path,
     dataType: "json",
     data: data,
     success: function (res) {

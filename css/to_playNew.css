@@ -63,6 +63,14 @@
   background-color: white;
   border-radius: 8px;
   overflow: hidden;
+  position: relative;
+}
+
+.content_box .text_ajax_content_box .ajax_the_new .arry_eight_box .inner_box_small .info_ty,
+.content_box .text_ajax_content_box .ajax_the_hot .arry_eight_box .inner_box_small .info_ty {
+  position: absolute;
+  top: 20%;
+  right: 20%;
 }
 
 .content_box .text_ajax_content_box .ajax_the_new .arry_eight_box .inner_box_small .playNew_top_box,

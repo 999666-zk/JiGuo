@@ -16,8 +16,8 @@
         <div class="connet">
             <img src="../img/logonew.png" alt="">
             <ul class="nav_con">
-                <li><a href="#">首页</a></li>
-                <li><a href="#">酷玩</a></li>
+                <li><a href="../index.html">首页</a></li>
+                <li><a href="../play/playNew.html">酷玩</a></li>
                 <li><a href="#">导购</a></li>
                 <li><a href="#">试用</a></li>
                 <li><a href="#">报告</a></li>
@@ -117,7 +117,7 @@
         <div class="arry_eight_box">
             {{each $value}}
             <div class="inner_box_small">
-                <div class="playNew_top_box"><img src="{{$value.img}}" alt=""></div>
+                <div class="playNew_top_box"><a href="#"><img src="{{$value.img}}" alt=""></a></div>
                 <div class="playNew_bottom_box">
                     <h4>{{$value.text}}</h4>
                     <div class="des">{{$value.description}}</div>
