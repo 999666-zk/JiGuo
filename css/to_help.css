@@ -1,0 +1,20 @@
+.playNew_bottom_box {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.playNew_bottom_box > div {
+  margin: 5px 5px;
+}
+.index_btn {
+  border: 1px solid rgb(254, 83, 65);
+  color: rgb(254, 83, 65);
+  padding: 6px 12px;
+  border-radius: 4px;
+  background-color: white;
+  margin: 0 10px;
+  margin-top: 10px;
+}
+.inner_box_small {
+  height: 360px;
+}

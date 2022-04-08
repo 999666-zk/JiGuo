@@ -24,8 +24,8 @@
             <ul class="nav_con">
                 <li><a href="./index.html">首页</a></li>
                 <li><a href="./play/playNew.html">酷玩</a></li>
-                <li><a href="#">导购</a></li>
-                <li><a href="#">试用</a></li>
+                <li><a href="./guid/guid.html">导购</a></li>
+                <li><a href="./help.html">试用</a></li>
                 <li><a href="#">报告</a></li>
             </ul>
             <div class="right_con">
@@ -411,9 +411,12 @@
     <script id="playNew" type="text/html">
         <div class="arry_eight_box">
             {{each value}}
-
             <div class="inner_box_small">
+                {{if $value.info_ty.length ==2}}
                 <div class="info_ty">{{$value.info_ty}}</div>
+                {{else}}
+                <div class="info_ty" id="spp_style">{{$value.info_ty}}</div>
+                {{/if}}
                 <div class="playNew_top_box"><a href="#"><img src="{{$value.img}}" alt=""></a></div>
 
                 <div class="playNew_bottom_box">
@@ -431,6 +434,7 @@
             {{/each}}
         </div>
     </script>
+
 
 
 

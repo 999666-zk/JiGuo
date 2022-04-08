@@ -6,27 +6,25 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link rel="stylesheet" href="./css/to_index.css">
-    <link rel="stylesheet" href="./css/to_playNew.css">
-    <link rel="stylesheet" href="./css/to_help.css">
-
+    <link rel="stylesheet" href="../css/to_index.css">
+    <link rel="stylesheet" href="../css/to_playNew.css">
 </head>
 
 <body>
     <!-- 导航栏部分 -->
     <div class="nav">
         <div class="connet">
-            <img src="./img/logonew.png" alt="">
+            <img src="../img/logonew.png" alt="">
             <ul class="nav_con">
-                <li><a href="./index.html">首页</a></li>
-                <li><a href="./play/playNew.html">酷玩</a></li>
-                <li><a href="./guid/guid.html">导购</a></li>
-                <li><a href="./help.html">试用</a></li>
+                <li><a href="../index.html">首页</a></li>
+                <li><a href="../play/playNew.html">酷玩</a></li>
+                <li><a href="../guid/guid.html">导购</a></li>
+                <li><a href="../help.html">试用</a></li>
                 <li><a href="#">报告</a></li>
             </ul>
             <div class="right_con">
                 <div>
-                    <img src="./img/search.png" alt="">
+                    <img src="../img/search.png" alt="">
                     <button class="btn">注册</button>
                     <button class="btn">登录</button>
                 </div>
@@ -38,25 +36,19 @@
     <!-- content -->
     <div class="content_box">
         <div class="title">
-            <h1>免费试用</h1>
+            <h1>导购清单</h1>
         </div>
         <div class="fu_title">
-            <div><a href="#">大众试用</a></div>
-            <div><a href="#">体验师专享</a></div>
-        </div>
-        <div class="lettle_fu_title">
-            <div><a href="#">全部</a></div>
-            <div><a href="#">申请中</a></div>
-            <div><a href="#">使用中</a></div>
-            <div><a href="#">已结束</a></div>
+            <div><a href="#">最新</a></div>
+            <div><a href="#">最热</a></div>
         </div>
         <!-- 这里展示请求的内容 -->
         <div class="text_ajax_content_box">
-            <div class=" ajax_the_new ajax_box" flag="1"></div>
-            <div class="ajax_the_hot ajax_box" flag="0" hidden></div>
-            <!-- <div class="ajax_the_pinpai ajax_box"></div> -->
+            <div class=" ajax_the_new ajax_box"></div>
+            <div class="ajax_the_hot ajax_box"></div>
+            <div class="ajax_the_pinpai ajax_box"></div>
             <div class="more_down">
-                <span id="more_selection"><img src="./img/more.png" alt="" style="float: left;margin-top: 8px;">
+                <span id="more_selection"><img src="../img/more.png" alt="" style="float: left;margin-top: 8px;">
                     <span style="width: 140px;">加载更多</span>
                 </span>
             </div>
@@ -71,11 +63,11 @@
     <div class="footer">
         <div class="footer_con">
             <div class="left_box">
-                <img src="./img/code.png" alt="">
+                <img src="../img/code.png" alt="">
             </div>
             <div class="right_box">
                 <dl>
-                    <img src="./img/logoImg.jpg" alt="">
+                    <img src="../img/logoImg.jpg" alt="">
                     <p>全球酷玩试用导购平台<br>库新奇好玩品质</p>
                     <p>微信添加“JguoJguo”<br>获取我们的服务</p>
                 </dl>
@@ -115,80 +107,36 @@
         </div>
         <p class="bottom">©2016极果版权所有</p>
     </div>
-    <script src="./js/jquery.min.js"></script>
-    <script src="./js/myAjax.js"></script>
-    <script src="./js/to_help.js"></script>
+    <script src="../js/jquery.min.js"></script>
+    <script src="../js/myAjax.js"></script>
+    <script src="../js/to_guid.js"></script>
 
     <script id="playNew" type="text/html">
+        {{each value}}
         <div class="arry_eight_box">
-            {{each value}}
+            {{each $value}}
             <div class="inner_box_small">
-                {{if $value.info_ty.length ==2}}
-                <div class="info_ty">{{$value.info_ty}}</div>
-                {{else}}
-                <div class="info_ty" id="spp_style">{{$value.info_ty}}</div>
-                {{/if}}
                 <div class="playNew_top_box"><a href="#"><img src="{{$value.img}}" alt=""></a></div>
-
                 <div class="playNew_bottom_box">
                     <h4>{{$value.text}}</h4>
-                    <div>
-                        <button class="index_btn">{{$value.totalnum}}</button>
-                        <button class="index_btn">{{$value.num}}台</button>
+                    <div class="des">{{$value.description}}</div>
+                    <div class="under_box">
+                        <div class="price">{{$value.price}}</div>
+                        <div class="like_letter">
+                            <span><span><img src="../img/xin.png" alt=""></span>&nbsp;{{$value.like}}</span>
+                            <span><span><img src="../img/reply.png" alt=""></span>&nbsp;{{$value.words}}</span>
+                        </div>
                     </div>
-                    <div><span style="color: rgb(254, 83, 65)">{{$value.apply}}</span>申请</div>
-                    <div><span style="color: rgb(254, 83, 65)">剩余时间2天</span></div>
                 </div>
             </div>
             {{/each}}
         </div>
+        {{/each}}
     </script>
 
-
-    <script id="playhot" type="text/html">
-        <div class="arry_eight_box">
-            {{each value}}
-            <div class="inner_box_small">
-                <div class="info_ty" id="spp_style">{{$value.info_ty}}</div>
-                <div class="playNew_top_box"><a href="#"><img src="{{$value.img}}" alt=""></a></div>
-
-                <div class="playNew_bottom_box">
-                    <h4>{{$value.text}}</h4>
-                    <div>
-                        <button class="index_btn">{{$value.totalnum}}</button>
-                        <button class="index_btn">{{$value.num}}台</button>
-                    </div>
-                    <div><span style="color: rgb(254, 83, 65)">{{$value.apply}}</span>申请</div>
-                    <div><span style="color: rgb(254, 83, 65)">剩余时间2天</span></div>
-                </div>
-            </div>
-            {{/each}}
-        </div>
-    </script>
 
 
     <script id="Pinpai" type="text/html">
-        <div class="arry_eight_box">
-            {{each value}}
-            <div class="inner_box_small">
-                <div class="info_ty" id="spp_style">{{$value.info_ty}}</div>
-                <div class="playNew_top_box"><a href="#"><img src="{{$value.img}}" alt=""></a></div>
-
-                <div class="playNew_bottom_box">
-                    <h4>{{$value.text}}</h4>
-                    <div>
-                        <button class="index_btn">{{$value.totalnum}}</button>
-                        <button class="index_btn">{{$value.num}}台</button>
-                    </div>
-                    <div><span style="color: rgb(254, 83, 65)">{{$value.apply}}</span>申请</div>
-                    <div><span style="color: rgb(254, 83, 65)">剩余时间2天</span></div>
-                </div>
-            </div>
-            {{/each}}
-        </div>
-    </script>
-
-    <!-- <script id="Pinpai" type="text/html">
         {{each value}}
         <div class="pin_out_box">
             <h3><span></span>
@@ -198,7 +146,7 @@
             <div class="pin_show">
 
                 <div>
-                    <img src="./img/cat_{{$index+1}}.png" alt=""><br>
+                    <img src="../img/cat_{{$index+1}}.png" alt=""><br>
                     <a href="#">{{$value.productName}}</a><span>({{$value.nums}})</span>
                 </div>
             </div>
@@ -210,22 +158,23 @@
                 {{/each}}
             </div>
         </div>
-        {{/each}} -->
+        {{/each}}
     </script>
     <!-- 引入模板 -->
-    <script src="./js/template-web.js"></script>
+    <script src="../js/template-web.js"></script>
     <script>
         // 进行ajax请求拿取数据
-        request("get", "/useing/public", "", success, error);
-        request('get', "/useing/master", "", successhot, errorhot);
+        request("get", "/play/new", "", success, error);
+        // request('get', "/play/hot", "", successhot, errorhot);
         // request('get', '/play/category', '', successpin, errorpin);
         // 将数据和模板关联起来
         // ---------------------------new------------------------------
         var ajax_the_new = document.getElementsByClassName('ajax_the_new')[0];
 
         function success(res) {
-            // console.log(res.slice(0, 2));
-            rederHtml(res.slice(0, 12), ajax_the_new, 'playNew');
+            console.log(res.slice(0, 2));
+            console.log(res.length);
+            rederHtml(res.slice(0, 2), ajax_the_new);
         }
         // 输出错误信息
         function error(res) {
@@ -235,46 +184,38 @@
         var ajax_the_hot = document.getElementsByClassName('ajax_the_hot')[0];
 
         function successhot(res) {
-            // console.log(res);
-            rederHtml(res.slice(0, 16), ajax_the_hot, 'playhot');
+            rederHtml(res.slice(2, 3), ajax_the_hot);
         }
         // 输出错误信息
         function errorhot(res) {
             console.log(res);
         }
-        // // --------------------------pinpai--------------------------
-        // var ajax_the_pinpai = document.getElementsByClassName('ajax_the_pinpai')[0];
+        // --------------------------pinpai--------------------------
+        var ajax_the_pinpai = document.getElementsByClassName('ajax_the_pinpai')[0];
 
-        // function successpin(res) {
-        //     console.log(res);
-        //     rederHtml_model2(res.slice(0, 2), ajax_the_pinpai);
-        // }
-        // // 输出错误信息
-        // function errorpin(res) {
-        //     console.log(res);
-        // }
-
-
+        function successpin(res) {
+            console.log(res);
+            rederHtml_model2(res.slice(0, 2), ajax_the_pinpai);
+        }
+        // 输出错误信息
+        function errorpin(res) {
+            console.log(res);
+        }
 
 
 
 
-        // function rederHtml(res, dom) {
-        //     var html_res = template('playNew', {
-        //         value: res
-        //     })
-        //     dom.innerHTML = html_res;
-        // }
 
-        // function rederHtml_model2(res, dom) {
-        //     var html_res = template('Pinpai', {
-        //         value: res
-        //     })
-        //     dom.innerHTML = html_res;
-        // }
 
-        function rederHtml(res, dom, ModelName) {
-            var html_res = template(ModelName, {
+        function rederHtml(res, dom) {
+            var html_res = template('playNew', {
+                value: res
+            })
+            dom.innerHTML = html_res;
+        }
+
+        function rederHtml_model2(res, dom) {
+            var html_res = template('Pinpai', {
                 value: res
             })
             dom.innerHTML = html_res;

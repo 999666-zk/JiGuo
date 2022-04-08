@@ -18,8 +18,8 @@
             <ul class="nav_con">
                 <li><a href="../index.html">首页</a></li>
                 <li><a href="../play/playNew.html">酷玩</a></li>
-                <li><a href="#">导购</a></li>
-                <li><a href="#">试用</a></li>
+                <li><a href="../guid/guid.html">导购</a></li>
+                <li><a href="../help.html">试用</a></li>
                 <li><a href="#">报告</a></li>
             </ul>
             <div class="right_con">
@@ -55,8 +55,6 @@
             </div>
         </div>
     </div>
-
-
 
 
 
@@ -175,7 +173,7 @@
         function success(res) {
             console.log(res.slice(0, 2));
             console.log(res.length);
-            rederHtml(res.slice(0, 2), ajax_the_new);
+            rederHtml(res.slice(0, 2), ajax_the_new, 'playNew');
         }
         // 输出错误信息
         function error(res) {
@@ -185,7 +183,7 @@
         var ajax_the_hot = document.getElementsByClassName('ajax_the_hot')[0];
 
         function successhot(res) {
-            rederHtml(res.slice(2, 3), ajax_the_hot);
+            rederHtml(res.slice(2, 3), ajax_the_hot, 'playNew');
         }
         // 输出错误信息
         function errorhot(res) {
@@ -196,7 +194,7 @@
 
         function successpin(res) {
             console.log(res);
-            rederHtml_model2(res.slice(0, 2), ajax_the_pinpai);
+            rederHtml(res.slice(0, 2), ajax_the_pinpai, 'Pinpai');
         }
         // 输出错误信息
         function errorpin(res) {
@@ -208,15 +206,22 @@
 
 
 
-        function rederHtml(res, dom) {
-            var html_res = template('playNew', {
+        // function rederHtml(res, dom) {
+        //     var html_res = template('playNew', {
+        //         value: res
+        //     })
+        //     dom.innerHTML = html_res;
+        // }
+
+        function rederHtml_model2(res, dom) {
+            var html_res = template('Pinpai', {
                 value: res
             })
             dom.innerHTML = html_res;
         }
 
-        function rederHtml_model2(res, dom) {
-            var html_res = template('Pinpai', {
+        function rederHtml(res, dom, ModelName) {
+            var html_res = template(ModelName, {
                 value: res
             })
             dom.innerHTML = html_res;
