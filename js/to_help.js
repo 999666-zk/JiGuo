@@ -35,7 +35,7 @@ $(function () {
           .children("span")
           .text("加载更多")
           .css("color", " rgb(255, 83, 51)");
-        moreLoading(2, 0, "/useing/public", ajax_the_new);
+        moreLoading(13, 0, "/useing/public", ajax_the_new);
       } else if ($(this).children("a").text() == "体验师专享") {
         $(".ajax_the_hot").fadeIn("slow");
         $(".ajax_the_hot").siblings(".ajax_box").fadeOut("slow");
@@ -48,7 +48,7 @@ $(function () {
           .children("span")
           .text("加载更多")
           .css("color", " rgb(255, 83, 51)");
-        moreLoading(3, 2, "/useing/master", ajax_the_hot);
+        moreLoading(19, 2, "/useing/master", ajax_the_hot);
       }
       console.log($(".ajax_the_new").attr("flag"));
     });
@@ -229,13 +229,7 @@ $(function () {
   }
 });
 
-function moreLoading(start, nums, path, dom) {
-  $("#more_selection").children("img").attr("src", "../img/more.png");
-  $("#more_selection")
-    .children("span")
-    .text("加载更多")
-    .css("color", " rgb(255, 83, 51)");
-
+function moreLoading(start, nums, path, dom, model) {
   var num = start;
   $("#more_selection").on("click", function () {
     $(this).children("img").attr("src", "../img/loading-icon.gif");
@@ -247,27 +241,19 @@ function moreLoading(start, nums, path, dom) {
       function success(res) {
         // console.log(res.slice(0, 2));
         if (num <= res.length) {
-          if (dom == ajax_the_pinpai) {
-            rederHtml_model2(res.slice(nums, num), dom);
-          } else {
-            rederHtml(res.slice(nums, num), dom);
-          }
+          rederHtml(res.slice(nums, num), dom, model);
+          $("#more_selection").children("img").attr("src", "../img/more.png");
+          $("#more_selection")
+            .children("span")
+            .text("加载更多")
+            .css("color", " rgb(255, 83, 51)");
         } else {
-          if (dom == ajax_the_pinpai) {
-            rederHtml_model2(res.slice(nums, res.length), dom);
-            $("#more_selection")
-              .children("span")
-              .text("已经底了！")
-              .css("color", "gray");
-            $("#more_selection").children("img").attr("src", "");
-          } else {
-            rederHtml(res.slice(nums, res.length), dom);
-            $("#more_selection")
-              .children("span")
-              .text("已经底了！")
-              .css("color", "gray");
-            $("#more_selection").children("img").attr("src", "");
-          }
+          // rederHtml(res.slice(nums, res.length), dom, model);
+          $("#more_selection")
+            .children("span")
+            .text("已经底了！")
+            .css("color", "gray");
+          $("#more_selection").children("img").attr("src", "");
         }
       }
     }, 1000);

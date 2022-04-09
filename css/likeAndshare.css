@@ -1,0 +1,57 @@
+.inner_right {
+  width: 100%;
+  height: 100px;
+  background-color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 8px;
+}
+.inner_right div {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.inner_right div .like {
+  display: block;
+  width: 30px;
+  height: 30px;
+  margin: 0 40px;
+  background-image: url(../img/xinRedo.png);
+  background-size: 100%;
+  background-repeat: no-repeat;
+  margin-bottom: 10px;
+}
+
+.click_like {
+  display: block;
+  width: 30px;
+  height: 30px;
+  margin: 0 40px;
+  background-image: url(../img/xinRedh.png);
+  background-size: 100%;
+  background-repeat: no-repeat;
+  margin-bottom: 10px;
+}
+.inner_right div .share {
+  display: block;
+  width: 30px;
+  height: 30px;
+  margin: 0 40px;
+  background-image: url(../img/share_yj1.png);
+  background-size: 80%;
+  background-repeat: no-repeat;
+  margin-bottom: 10px;
+}
+
+.click_share {
+  display: block;
+  width: 30px;
+  height: 30px;
+  margin: 0 40px;
+  background-image: url(../img/shareh_yj1.png);
+  background-size: 80%;
+  background-repeat: no-repeat;
+  margin-bottom: 10px;
+}

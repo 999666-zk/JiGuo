@@ -11,6 +11,7 @@
     <!-- 引入主页样式 -->
     <link rel="stylesheet" href="./css/to_index.css">
     <link rel="stylesheet" href="./css/to_playNew.css">
+    <link rel="stylesheet" href="./css/them.css">
 </head>
 <style>
 
@@ -20,19 +21,19 @@
     <!-- 导航栏部分 -->
     <div class="nav">
         <div class="connet">
-            <img src="./img/logonew.png" alt="">
+            <a href="./index.html"><img src="./img/logonew.png" alt=""></a>
             <ul class="nav_con">
-                <li><a href="./index.html">首页</a></li>
-                <li><a href="./play/playNew.html">酷玩</a></li>
-                <li><a href="./guid/guid.html">导购</a></li>
-                <li><a href="./help.html">试用</a></li>
-                <li><a href="#">报告</a></li>
+                <li><a id="index" href="./index.html">首页</a></li>
+                <li><a id="play" href="./play/play.html">酷玩</a></li>
+                <li><a id="guid" href="./guid/guid.html">导购</a></li>
+                <li><a id="help" href="./help.html">试用</a></li>
+                <li><a id="report" href="./report/report.html">报告</a></li>
             </ul>
             <div class="right_con">
                 <div>
                     <img src="./img/search.png" alt="">
-                    <button class="btn">注册</button>
-                    <button class="btn">登录</button>
+                    <button class="btn"><a class="rl_btn" href="./regist.html">注册</a></button>
+                    <button class="btn"><a class="rl_btn" href="./login.html">登录</a></button>
                 </div>
             </div>
         </div>
@@ -43,7 +44,7 @@
             <img src="./img/original.jpg" alt="">
         </div>
         <div class="right_text">
-            <div>
+            <div style="width: 310px;">
                 <h1><a href="#">幻想小贝HIFI2.1音响</a></h1>
             </div>
             <div class="btn_white">
@@ -51,8 +52,8 @@
                 <div class="small_box"><a href="#">￥599</a></div>
                 <div class="small_box"><a href="#">20台</a></div>
             </div>
-            <div>申请时间剩余：<span class="times"></span></div>
-            <div class="re_now"><a href="#">立即申请</a></div>
+            <div style="width: 260px;">申请时间剩余：<span class="times"></span></div>
+            <div class="re_now" style="width: 200px;height: 23px;"><a href="#">立即申请</a></div>
         </div>
     </div>
     <!-- 轮播图 -->
@@ -62,7 +63,7 @@
             <img src="./img/prev.png" alt="">
         </span>
 
-        <div class="title_to_index">
+        <div class="title_to_index" style="width: 1346px;">
             <h2>热门试用</h2>
         </div>
         <div class="inner_big_box">
@@ -70,7 +71,7 @@
             <div class="lunbo_check_box">
                 <div class="inner_small_box">
                     <div class="small_content">
-                        <div class="index_img_box"><a href="#"><img src="./img/hot9.jpg" alt=""></a></div>
+                        <div class="index_img_box"><a href="./use/test.html"><img src="./img/hot9.jpg" alt=""></a></div>
                         <div>
                             <h3><a href="#">巴慕斯The Toaster烤面包机</a></h3>
                         </div>
@@ -83,21 +84,7 @@
                     </div>
 
                     <div class="small_content">
-                        <div class="index_img_box"><a href="#"><img src="./img/hot4.jpg" alt=""></a></div>
-                        <div>
-                            <h3><a href="#">巴慕斯The Toaster烤面包机</a></h3>
-                        </div>
-                        <div>
-                            <button class="index_btn">2032</button>
-                            <button class="index_btn">20台</button>
-                        </div>
-                        <p><span>1392</span>申请</p>
-                        <p><span>剩余时间2天</span></p>
-                    </div>
-
-
-                    <div class="small_content">
-                        <div class="index_img_box"><a href="#"><img src="./img/hot2.jpg" alt=""></a></div>
+                        <div class="index_img_box"><a href="./use/test.html"><img src="./img/hot4.jpg" alt=""></a></div>
                         <div>
                             <h3><a href="#">巴慕斯The Toaster烤面包机</a></h3>
                         </div>
@@ -111,35 +98,7 @@
 
 
                     <div class="small_content">
-                        <div class="index_img_box"><a href="#"><img src="./img/hot10.jpg" alt=""></a></div>
-                        <div>
-                            <h3><a href="#">巴慕斯The Toaster烤面包机</a></h3>
-                        </div>
-                        <div>
-                            <button class="index_btn">2032</button>
-                            <button class="index_btn">20台</button>
-                        </div>
-                        <p><span>1392</span>申请</p>
-                        <p><span>剩余时间2天</span></p>
-                    </div>
-
-                </div>
-                <div class="inner_small_box">
-                    <div class="small_content">
-                        <div class="index_img_box"><a href="#"><img src="./img/hot9.jpg" alt=""></a></div>
-                        <div>
-                            <h3><a href="#">巴慕斯The Toaster烤面包机</a></h3>
-                        </div>
-                        <div>
-                            <button class="index_btn">2032</button>
-                            <button class="index_btn">20台</button>
-                        </div>
-                        <p><span>1392</span>申请</p>
-                        <p><span>剩余时间2天</span></p>
-                    </div>
-
-                    <div class="small_content">
-                        <div class="index_img_box"><a href="#"><img src="./img/hot4.jpg" alt=""></a></div>
+                        <div class="index_img_box"><a href="./use/test.html"><img src="./img/hot2.jpg" alt=""></a></div>
                         <div>
                             <h3><a href="#">巴慕斯The Toaster烤面包机</a></h3>
                         </div>
@@ -153,21 +112,8 @@
 
 
                     <div class="small_content">
-                        <div class="index_img_box"><a href="#"><img src="./img/hot2.jpg" alt=""></a></div>
-                        <div>
-                            <h3><a href="#">巴慕斯The Toaster烤面包机</a></h3>
+                        <div class="index_img_box"><a href="./use/test.html"><img src="./img/hot10.jpg" alt=""></a>
                         </div>
-                        <div>
-                            <button class="index_btn">2032</button>
-                            <button class="index_btn">20台</button>
-                        </div>
-                        <p><span>1392</span>申请</p>
-                        <p><span>剩余时间2天</span></p>
-                    </div>
-
-
-                    <div class="small_content">
-                        <div class="index_img_box"><a href="#"><img src="./img/hot10.jpg" alt=""></a></div>
                         <div>
                             <h3><a href="#">巴慕斯The Toaster烤面包机</a></h3>
                         </div>
@@ -182,7 +128,7 @@
                 </div>
                 <div class="inner_small_box">
                     <div class="small_content">
-                        <div class="index_img_box"><a href="#"><img src="./img/hot9.jpg" alt=""></a></div>
+                        <div class="index_img_box"><a href="./use/test.html"><img src="./img/hot9.jpg" alt=""></a></div>
                         <div>
                             <h3><a href="#">巴慕斯The Toaster烤面包机</a></h3>
                         </div>
@@ -195,21 +141,7 @@
                     </div>
 
                     <div class="small_content">
-                        <div class="index_img_box"><a href="#"><img src="./img/hot4.jpg" alt=""></a></div>
-                        <div>
-                            <h3><a href="#">巴慕斯The Toaster烤面包机</a></h3>
-                        </div>
-                        <div>
-                            <button class="index_btn">2032</button>
-                            <button class="index_btn">20台</button>
-                        </div>
-                        <p><span>1392</span>申请</p>
-                        <p><span>剩余时间2天</span></p>
-                    </div>
-
-
-                    <div class="small_content">
-                        <div class="index_img_box"><a href="#"><img src="./img/hot2.jpg" alt=""></a></div>
+                        <div class="index_img_box"><a href="./use/test.html"><img src="./img/hot4.jpg" alt=""></a></div>
                         <div>
                             <h3><a href="#">巴慕斯The Toaster烤面包机</a></h3>
                         </div>
@@ -223,7 +155,22 @@
 
 
                     <div class="small_content">
-                        <div class="index_img_box"><a href="#"><img src="./img/hot10.jpg" alt=""></a></div>
+                        <div class="index_img_box"><a href="./use/test.html"><img src="./img/hot2.jpg" alt=""></a></div>
+                        <div>
+                            <h3><a href="#">巴慕斯The Toaster烤面包机</a></h3>
+                        </div>
+                        <div>
+                            <button class="index_btn">2032</button>
+                            <button class="index_btn">20台</button>
+                        </div>
+                        <p><span>1392</span>申请</p>
+                        <p><span>剩余时间2天</span></p>
+                    </div>
+
+
+                    <div class="small_content">
+                        <div class="index_img_box"><a href="./use/test.html"><img src="./img/hot10.jpg" alt=""></a>
+                        </div>
                         <div>
                             <h3><a href="#">巴慕斯The Toaster烤面包机</a></h3>
                         </div>
@@ -238,7 +185,7 @@
                 </div>
                 <div class="inner_small_box">
                     <div class="small_content">
-                        <div class="index_img_box"><a href="#"><img src="./img/hot9.jpg" alt=""></a></div>
+                        <div class="index_img_box"><a href="./use/test.html"><img src="./img/hot9.jpg" alt=""></a></div>
                         <div>
                             <h3><a href="#">巴慕斯The Toaster烤面包机</a></h3>
                         </div>
@@ -251,21 +198,7 @@
                     </div>
 
                     <div class="small_content">
-                        <div class="index_img_box"><a href="#"><img src="./img/hot4.jpg" alt=""></a></div>
-                        <div>
-                            <h3><a href="#">巴慕斯The Toaster烤面包机</a></h3>
-                        </div>
-                        <div>
-                            <button class="index_btn">2032</button>
-                            <button class="index_btn">20台</button>
-                        </div>
-                        <p><span>1392</span>申请</p>
-                        <p><span>剩余时间2天</span></p>
-                    </div>
-
-
-                    <div class="small_content">
-                        <div class="index_img_box"><a href="#"><img src="./img/hot2.jpg" alt=""></a></div>
+                        <div class="index_img_box"><a href="./use/test.html"><img src="./img/hot4.jpg" alt=""></a></div>
                         <div>
                             <h3><a href="#">巴慕斯The Toaster烤面包机</a></h3>
                         </div>
@@ -279,7 +212,79 @@
 
 
                     <div class="small_content">
-                        <div class="index_img_box"><a href="#"><img src="./img/hot10.jpg" alt=""></a></div>
+                        <div class="index_img_box"><a href="./use/test.html"><img src="./img/hot2.jpg" alt=""></a></div>
+                        <div>
+                            <h3><a href="#">巴慕斯The Toaster烤面包机</a></h3>
+                        </div>
+                        <div>
+                            <button class="index_btn">2032</button>
+                            <button class="index_btn">20台</button>
+                        </div>
+                        <p><span>1392</span>申请</p>
+                        <p><span>剩余时间2天</span></p>
+                    </div>
+
+
+                    <div class="small_content">
+                        <div class="index_img_box"><a href="./use/test.html"><img src="./img/hot10.jpg" alt=""></a>
+                        </div>
+                        <div>
+                            <h3><a href="#">巴慕斯The Toaster烤面包机</a></h3>
+                        </div>
+                        <div>
+                            <button class="index_btn">2032</button>
+                            <button class="index_btn">20台</button>
+                        </div>
+                        <p><span>1392</span>申请</p>
+                        <p><span>剩余时间2天</span></p>
+                    </div>
+
+                </div>
+                <div class="inner_small_box">
+                    <div class="small_content">
+                        <div class="index_img_box"><a href="./use/test.html"><img src="./img/hot9.jpg" alt=""></a></div>
+                        <div>
+                            <h3><a href="#">巴慕斯The Toaster烤面包机</a></h3>
+                        </div>
+                        <div>
+                            <button class="index_btn">2032</button>
+                            <button class="index_btn">20台</button>
+                        </div>
+                        <p><span>1392</span>申请</p>
+                        <p><span>剩余时间2天</span></p>
+                    </div>
+
+                    <div class="small_content">
+                        <div class="index_img_box"><a href="./use/test.html"><img src="./img/hot4.jpg" alt=""></a></div>
+                        <div>
+                            <h3><a href="#">巴慕斯The Toaster烤面包机</a></h3>
+                        </div>
+                        <div>
+                            <button class="index_btn">2032</button>
+                            <button class="index_btn">20台</button>
+                        </div>
+                        <p><span>1392</span>申请</p>
+                        <p><span>剩余时间2天</span></p>
+                    </div>
+
+
+                    <div class="small_content">
+                        <div class="index_img_box"><a href="./use/test.html"><img src="./img/hot2.jpg" alt=""></a></div>
+                        <div>
+                            <h3><a href="#">巴慕斯The Toaster烤面包机</a></h3>
+                        </div>
+                        <div>
+                            <button class="index_btn">2032</button>
+                            <button class="index_btn">20台</button>
+                        </div>
+                        <p><span>1392</span>申请</p>
+                        <p><span>剩余时间2天</span></p>
+                    </div>
+
+
+                    <div class="small_content">
+                        <div class="index_img_box"><a href="./use/test.html"><img src="./img/hot10.jpg" alt=""></a>
+                        </div>
                         <div>
                             <h3><a href="#">巴慕斯The Toaster烤面包机</a></h3>
                         </div>
@@ -305,7 +310,7 @@
 
 
     <!-- 报告精选-->
-    <div class="index_biaoti_out_box">
+    <div class="index_biaoti_out_box ">
         <div class="index_biaoti_out_box_inner_box">
             <div class="biaoti_left">
                 <h2>报告精选</h2>
@@ -320,7 +325,7 @@
 
 
     <!-- 导购精选-->
-    <div class="index_biaoti_out_box">
+    <div class="index_biaoti_out_box" style="background-color: white;">
         <div class="index_biaoti_out_box_inner_box">
             <div class="biaoti_left">
                 <h2>导购精选</h2>
@@ -328,7 +333,7 @@
             <div class="biaoti_right"><span><img src="./img/readMore.png" alt=""></span><a href="#">查看更多</a></div>
         </div>
     </div>
-    <div style="background-color: rgb(247, 247, 247);width: 100%;">
+    <div style="background-color: white;width: 100%;">
         <div class="ajax_the_new ajax_box">
         </div>
     </div>
@@ -363,7 +368,7 @@
                 </dl>
                 <dl>
                     <dt><a href="#">免费试用</a></dt>
-                    <dd><a href="#">使用流程</a></dd>
+                    <dd><a href="./about.html">使用流程</a></dd>
                     <dd><a href="#">如何提高成功率</a></dd>
                 </dl>
                 <dl>
@@ -408,6 +413,7 @@
     <script src="./js/myAjax.js"></script>
     <script src="./js/to_index.js"></script>
 
+
     <script id="playNew" type="text/html">
         <div class="arry_eight_box">
             {{each value}}
@@ -417,7 +423,8 @@
                 {{else}}
                 <div class="info_ty" id="spp_style">{{$value.info_ty}}</div>
                 {{/if}}
-                <div class="playNew_top_box"><a href="#"><img src="{{$value.img}}" alt=""></a></div>
+                <div class="playNew_top_box"><a href="./use/nice.html"><img class="tou" src="{{$value.img}}" alt=""></a>
+                </div>
 
                 <div class="playNew_bottom_box">
                     <h4>{{$value.text}}</h4>
@@ -447,7 +454,8 @@
         <div class="arry_eight_box">
             {{each $value}}
             <div class="inner_box_small">
-                <div class="playNew_top_box"><a href="#"><img src="{{$value.img}}" alt=""></a></div>
+                <div class="playNew_top_box"><a href="./use/test.html"><img class="tou" src="{{$value.img}}" alt=""></a>
+                </div>
                 <div class="playNew_bottom_box">
                     <h4>{{$value.text}}</h4>
                     <div class="des">{{$value.description}}</div>
@@ -515,6 +523,7 @@
             dom.innerHTML = html_res;
         }
     </script>
+    <script src="./js/sp_model.js"></script>
 </body>
 
 </html>

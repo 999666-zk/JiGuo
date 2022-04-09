@@ -24,7 +24,7 @@ $(function () {
           .children("span")
           .text("加载更多")
           .css("color", " rgb(255, 83, 51)");
-        moreLoading(2, 0, "/play/new", ajax_the_new);
+        moreLoading(2, 0, "/play/new", ajax_the_new, "playNew");
       } else if ($(this).children("a").text() == "最热") {
         $(".ajax_the_hot").fadeIn("slow");
         $(".ajax_the_hot").siblings(".ajax_box").fadeOut("slow");
@@ -36,7 +36,7 @@ $(function () {
           .children("span")
           .text("加载更多")
           .css("color", " rgb(255, 83, 51)");
-        moreLoading(3, 2, "/play/hot", ajax_the_hot);
+        moreLoading(3, 2, "/play/hot", ajax_the_hot, "playNew");
       } else if ($(this).children("a").text() == "品牌") {
         $(".ajax_the_pinpai").fadeIn("slow");
         $(".ajax_the_pinpai").siblings(".ajax_box").fadeOut("slow");
@@ -48,7 +48,7 @@ $(function () {
           .children("span")
           .text("加载更多")
           .css("color", " rgb(255, 83, 51)");
-        moreLoading(2, 0, "/play/category", ajax_the_pinpai);
+        moreLoading(2, 0, "/play/category", ajax_the_pinpai, "Pinpai");
       }
       $(this).siblings().children("a").css({
         color: "rgb(180, 175, 170)",
@@ -57,26 +57,20 @@ $(function () {
     });
 
   // hover 图片使其动画效果
-  $(".playNew_top_box").children("img").css("opacity", "1");
-  $(".playNew_top_box")
-    .children("img")
-    .hover(function () {
-      $(".playNew_top_box").children("img").animate(
-        {
-          opacity: "0.1",
-        },
-        "slow"
-      );
-    });
+  // $(".playNew_top_box").children("img").css("opacity", "1");
+  // $(".playNew_top_box")
+  //   .children("img")
+  //   .hover(function () {
+  //     $(".playNew_top_box").children("img").animate(
+  //       {
+  //         opacity: "0.1",
+  //       },
+  //       "slow"
+  //     );
+  //   });
 });
 // $("div").animate({ opacity: "0.1" }, 1500);
-function moreLoading(start, nums, path, dom) {
-  $("#more_selection").children("img").attr("src", "../img/more.png");
-  $("#more_selection")
-    .children("span")
-    .text("加载更多")
-    .css("color", " rgb(255, 83, 51)");
-
+function moreLoading(start, nums, path, dom, model) {
   var num = start;
   $("#more_selection").on("click", function () {
     $(this).children("img").attr("src", "../img/loading-icon.gif");
@@ -88,27 +82,19 @@ function moreLoading(start, nums, path, dom) {
       function success(res) {
         // console.log(res.slice(0, 2));
         if (num <= res.length) {
-          if (dom == ajax_the_pinpai) {
-            rederHtml_model2(res.slice(nums, num), dom);
-          } else {
-            rederHtml(res.slice(nums, num), dom);
-          }
+          rederHtml(res.slice(nums, num), dom, model);
+          $("#more_selection").children("img").attr("src", "../img/more.png");
+          $("#more_selection")
+            .children("span")
+            .text("加载更多")
+            .css("color", " rgb(255, 83, 51)");
         } else {
-          if (dom == ajax_the_pinpai) {
-            rederHtml_model2(res.slice(nums, res.length), dom);
-            $("#more_selection")
-              .children("span")
-              .text("已经底了！")
-              .css("color", "gray");
-            $("#more_selection").children("img").attr("src", "");
-          } else {
-            rederHtml(res.slice(nums, res.length), dom);
-            $("#more_selection")
-              .children("span")
-              .text("已经底了！")
-              .css("color", "gray");
-            $("#more_selection").children("img").attr("src", "");
-          }
+          // rederHtml(res.slice(nums, res.length), dom, model);
+          $("#more_selection")
+            .children("span")
+            .text("已经底了！")
+            .css("color", "gray");
+          $("#more_selection").children("img").attr("src", "");
         }
       }
     }, 1000);

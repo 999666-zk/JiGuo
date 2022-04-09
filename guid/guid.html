@@ -8,25 +8,26 @@
     <title>Document</title>
     <link rel="stylesheet" href="../css/to_index.css">
     <link rel="stylesheet" href="../css/to_playNew.css">
+    <link rel="stylesheet" href="../css/them.css">
 </head>
 
 <body>
     <!-- 导航栏部分 -->
     <div class="nav">
         <div class="connet">
-            <img src="../img/logonew.png" alt="">
+            <a href="../index.html"><img src="../img/logonew.png" alt=""></a>
             <ul class="nav_con">
-                <li><a href="../index.html">首页</a></li>
-                <li><a href="../play/playNew.html">酷玩</a></li>
-                <li><a href="../guid/guid.html">导购</a></li>
-                <li><a href="../help.html">试用</a></li>
-                <li><a href="#">报告</a></li>
+                <li><a id="index" href="../index.html">首页</a></li>
+                <li><a id="play" href="../play/play.html">酷玩</a></li>
+                <li><a id="guid" href="../guid/guid.html">导购</a></li>
+                <li><a id="help" href="../help.html">试用</a></li>
+                <li><a id="report" href="../report/report.html">报告</a></li>
             </ul>
             <div class="right_con">
                 <div>
                     <img src="../img/search.png" alt="">
-                    <button class="btn">注册</button>
-                    <button class="btn">登录</button>
+                    <button class="btn"><a class="rl_btn" href="../regist.html">注册</a></button>
+                    <button class="btn"><a class="rl_btn" href="../login.html">登录</a></button>
                 </div>
             </div>
         </div>
@@ -73,7 +74,7 @@
                 </dl>
                 <dl>
                     <dt><a href="#">免费试用</a></dt>
-                    <dd><a href="#">使用流程</a></dd>
+                    <dd><a href="../about.html">使用流程</a></dd>
                     <dd><a href="#">如何提高成功率</a></dd>
                 </dl>
                 <dl>
@@ -221,7 +222,7 @@
             dom.innerHTML = html_res;
         }
     </script>
-
+    <script src="../js/sp_model.js"></script>
 </body>
 
 </html>

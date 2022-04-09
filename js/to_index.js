@@ -1,12 +1,4 @@
 window.onload = function () {
-  //导航栏点击进行变色
-  $(".nav_con")
-    .children("li")
-    .on("click", function () {
-      $(this).children("a").css("color", "rgb(254, 83, 65)");
-      $(this).siblings("li").children("a").css("color", "black");
-    });
-
   var timer_min = null;
   timer_min = setInterval(function () {
     times_();
@@ -54,7 +46,7 @@ window.onload = function () {
   var num = 0;
   var start = 0;
   var end = 0;
-  // scroll_box.scrollLeft = imgs[0].offsetWidth;
+  // var scroll_box.scrollLeft = 1420;
   function automove() {
     timer = setInterval(function () {
       num++;
@@ -67,10 +59,12 @@ window.onload = function () {
 
       // console.log(start);
       end = 1420 * num;
-
+      scroll_box.setAttribute("index", num);
       //把图片 切成指定的份数 来进行滚动
+      console.log(scroll_box.getAttribute("index"));
+
       move(start, end, 1);
-    }, 6000);
+    }, 3000);
   }
   automove();
 
@@ -105,40 +99,56 @@ window.onload = function () {
 
   var row_left = document.getElementsByClassName("row_left")[0];
   var row_right = document.getElementsByClassName("row_right")[0];
+  row_left.addEventListener("mouseenter", function () {
+    clearInterval(timer);
+  });
+  row_left.addEventListener("mouseleave", function () {
+    automove();
+  });
+
+  row_right.addEventListener("mouseenter", function () {
+    clearInterval(timer);
+  });
+  row_right.addEventListener("mouseleave", function () {
+    automove();
+  });
 
   row_right.addEventListener("click", function () {
     clearInterval(timer);
     num++;
     if (num >= look_img.length) {
       num = 1;
-      scroll_box.scrollLeft = 1420;
+      scroll_box.scrollLeft = 0;
     }
 
     start = scroll_box.scrollLeft;
 
-    // console.log(start);
     end = 1420 * num;
-
+    console.log(num);
+    scroll_box.getAttribute("index", num);
     //把图片 切成指定的份数 来进行滚动
     move(start, end, 1);
   });
 
   row_left.addEventListener("click", function () {
     clearInterval(timer);
-    num--;
+    num = scroll_box.scrollLeft / 1420;
     if (num <= 0) {
       num = look_img.length - 2;
-      scroll_box.scrollLeft = (look_img.length - 2) * 1420;
+      scroll_box.scrollLeft = num * 1420;
     }
 
     start = scroll_box.scrollLeft;
 
-    // console.log(start);
     end = 1420 * (num + 1);
 
+    console.log(num);
+    scroll_box.getAttribute("index", num);
     //把图片 切成指定的份数 来进行滚动
     move(start, end, 0);
   });
+
+  //--------------------------------------------------
   // 防止抖动
   document.addEventListener("visibilitychange", function () {
     console.log(this.visibilityState);
@@ -150,12 +160,12 @@ window.onload = function () {
       clearInterval(timer1);
     }
   });
-
+  //-----------------------------------------------------
   // 返回顶部
   var back = document.getElementsByClassName("back")[0];
-  var timer = null;
+  var timer_back = null;
   window.onscroll = function () {
-    if (document.documentElement.scrollTop >= 800) {
+    if (document.documentElement.scrollTop >= 1600) {
       back.style.display = "block";
     }
     if (document.documentElement.scrollTop < 800) {
@@ -163,10 +173,10 @@ window.onload = function () {
     }
   };
   back.onclick = function () {
-    timer = setInterval(function () {
+    timer_back = setInterval(function () {
       var scroll_top = (document.documentElement.scrollTop -= 100);
       if (scroll_top <= 0) {
-        clearInterval(timer);
+        clearInterval(timer_back);
       }
     }, 1);
   };
